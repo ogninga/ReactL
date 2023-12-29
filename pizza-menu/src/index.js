@@ -82,7 +82,7 @@ function Menu() {
       <main className="menu">
         <h2> Our Menu</h2>
 
-        {numPizzas > 0 && (
+        {numPizzas > 0 ? (
           <ul className="pizzas">
             {pizzaData.map((pizza) => (
               <Pizza
@@ -96,6 +96,8 @@ function Menu() {
               />
             ))}
           </ul>
+        ) : (
+          <p>Working on menu please come back later.</p>
         )}
 
         {/* <Pizza
@@ -145,13 +147,15 @@ function Footer() {
   return (
     <>
       <footer className="footer">
-        {isOpen && (
+        {isOpen ? (
           <div className="order">
             <p>
               We are open until {closeHour}:00. Visit us now or order online.
             </p>
             <button className="btn">Order</button>
           </div>
+        ) : (
+          <p>We are currently closed for the night we open at {openHour}</p>
         )}
       </footer>
     </>
