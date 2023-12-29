@@ -83,19 +83,26 @@ function Menu() {
         <h2> Our Menu</h2>
 
         {numPizzas > 0 ? (
-          <ul className="pizzas">
-            {pizzaData.map((pizza) => (
-              <Pizza
-                pizzaObj={pizza}
-                key={pizza.name}
-                //   name={pizza.name}
-                //   ingredients={pizza.ingredients}
-                //   price={pizza.price}
-                //   photoName={pizza.photoName}
-                //   soldOut={pizza.soldOut}
-              />
-            ))}
-          </ul>
+          <>
+            <p>
+              Authentic Italian Cuisine. 6 creative dishes to choose from. All
+              from our stone oven, all organic, all delicious.
+            </p>
+
+            <ul className="pizzas">
+              {pizzaData.map((pizza) => (
+                <Pizza
+                  pizzaObj={pizza}
+                  key={pizza.name}
+                  //   name={pizza.name}
+                  //   ingredients={pizza.ingredients}
+                  //   price={pizza.price}
+                  //   photoName={pizza.photoName}
+                  //   soldOut={pizza.soldOut}
+                />
+              ))}
+            </ul>
+          </>
         ) : (
           <p>Working on menu please come back later.</p>
         )}
@@ -120,16 +127,16 @@ function Menu() {
 function Pizza({ pizzaObj }) {
   console.log();
 
-  if (pizzaObj.soldOut) return null;
+  //   if (pizzaObj.soldOut) return null;
 
   return (
     <>
-      <li className="pizza">
+      <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
         <img src={pizzaObj.photoName} alt={pizzaObj.name} />
         <div>
           <h3>{pizzaObj.name}</h3>
           <p>{pizzaObj.ingredients}</p>
-          <span>{pizzaObj.price}</span>
+          <span>{pizzaObj.soldOut ? "Sold out" : pizzaObj.price}</span>
         </div>
       </li>
     </>
