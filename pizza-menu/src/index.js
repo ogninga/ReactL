@@ -119,6 +119,9 @@ function Menu() {
 
 function Pizza(props) {
   console.log(props);
+
+  if (props.pizzaObj.soldOut) return null;
+
   return (
     <>
       <li className="pizza">
@@ -148,12 +151,7 @@ function Footer() {
     <>
       <footer className="footer">
         {isOpen ? (
-          <div className="order">
-            <p>
-              We are open until {closeHour}:00. Visit us now or order online.
-            </p>
-            <button className="btn">Order</button>
-          </div>
+          <Order closeHour={closeHour} />
         ) : (
           <p>We are currently closed for the night we open at {openHour}</p>
         )}
@@ -164,6 +162,18 @@ function Footer() {
   //   React.createElement("footer", null, "We are open!");
 }
 
+function Order(props) {
+  return (
+    <>
+      <div className="order">
+        <p>
+          We are open until {props.closeHour}:00. Visit us now or order online.
+        </p>
+        <button className="btn">Order</button>
+      </div>
+    </>
+  );
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
