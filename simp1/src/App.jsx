@@ -9,7 +9,11 @@ function App() {
       <h1>Todo List</h1>
       <TodoList />
       this belongs to
-      <Eman />
+      <Eman name="turtle" number={12} style="top" />
+      <Eman name="snake" number={23} style="tully" />
+      <Eman name="Billy bob joel" number={8} style="tux">
+        Asleeeeeeeeep
+      </Eman>
       <TodoListClass />
     </>
   );
