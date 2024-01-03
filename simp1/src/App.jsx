@@ -5,14 +5,29 @@
 import { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("eman");
+  const [name, setName] = useState(() => {
+    console.log("name changed");
+    return "Joe";
+  });
+
+  const [age, setAge] = useState(0);
   function handleClick() {
     setName("Bob");
+
+    setAge((currentAge) => {
+      return currentAge + 1;
+    });
+    setAge((currentAge) => {
+      return currentAge + 1;
+    });
   }
 
   return (
     <>
-      <h1 onClick={handleClick}>hi{name}</h1>
+      <h1 onClick={handleClick}>
+        hi{name}
+        {age}
+      </h1>
 
       {/* <h1>Todo List</h1>
       <TodoList />
