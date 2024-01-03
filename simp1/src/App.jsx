@@ -5,6 +5,7 @@
 import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
   const [name, setName] = useState(() => {
     console.log("name changed");
     return "Joe";
@@ -20,6 +21,11 @@ function App() {
     setAge((currentAge) => {
       return currentAge + 1;
     });
+
+    setCount((c) => {
+      console.log("count increased by 1");
+      return c + 1;
+    });
   }
 
   return (
@@ -27,6 +33,7 @@ function App() {
       <h1 onClick={handleClick}>
         hi{name}
         {age}
+        the current count is {count}
       </h1>
 
       {/* <h1>Todo List</h1>
