@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState(() => {
     console.log("name changed");
-    return "Joe";
+    return "Joe, solonana";
   });
 
   const [age, setAge] = useState(0);
