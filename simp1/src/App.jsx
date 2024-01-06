@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+const INITIAL_VALUE = ["A", "B", "C", "D", "E"];
+
 function App() {
-  const [array, setArray] = useState(["A", "B", "C", "D", "E"]);
+  const [array, setArray] = useState(INITIAL_VALUE);
 
   function removeFirstElement() {
     setArray((currentArray) => {
@@ -27,6 +29,14 @@ function App() {
     });
   }
 
+  function clear() {
+    setArray([]);
+  }
+
+  function reset() {
+    setArray(INITIAL_VALUE);
+  }
+
   return (
     <>
       <button onClick={removeFirstElement}>Remove First Element</button>
@@ -36,6 +46,10 @@ function App() {
       <button onClick={() => addLetterStart(["R"])}>add R to start</button>
       <br />
       <button onClick={() => addLetterEnd("O")}>Add O to end.</button>
+      <br />
+      <button onClick={clear}>Clear</button>
+      <br />
+      <button onClick={reset}>Reset</button>
       <br />
       <br />
       {array.join(", ")}
