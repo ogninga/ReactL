@@ -1,6 +1,9 @@
 // import { MouseEvent } from "react";
+// import styles from "./ListGroup.module.css";
 
 import { useState } from "react";
+
+import { List, ListItem } from "./ListGroupStyles";
 
 interface ListGroupProps {
   items: string[];
@@ -11,7 +14,7 @@ interface ListGroupProps {
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   // let selectedIndex = 0;
   //hook
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   // const [name, setName] = useState('')
 
   const getMessage = () => {
@@ -25,24 +28,19 @@ function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
     <>
       <h1>{heading}</h1>
       {getMessage()}
-      <ul className="list-group">
+      <List>
         {items.map((item, index) => (
-          <li
+          <ListItem
             onClick={() => {
               setSelectedIndex(index);
               onSelectItem(item);
             }}
             key={item}
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
           >
             {item}
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </>
   );
 }
