@@ -1,4 +1,19 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {
+  people01,
+  people02,
+  people03,
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  send,
+  shield,
+  star,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -73,17 +88,17 @@ export const feedback = [
 export const stats = [
   {
     id: "stats-1",
-    title: "User Active",
+    title: "Users Active",
     value: "3800+",
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
+    title: "Companies That Trust HooBank",
     value: "230+",
   },
   {
     id: "stats-3",
-    title: "Transaction",
+    title: "Transactions",
     value: "$230M+",
   },
 ];

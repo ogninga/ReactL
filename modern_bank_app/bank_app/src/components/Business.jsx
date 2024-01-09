@@ -1,7 +1,6 @@
-import React from "react";
+import { features } from "../constants";
 
-const Business = () => {
-  return <div>Business</div>;
-};
+const Business = () => (
 
+)
 export default Business;
