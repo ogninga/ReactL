@@ -1,0 +1,31 @@
+import { discount, robot } from "../assets";
+import styles from "../style";
+
+const Hero = () => (
+  <section id="home" className={`${styles.paddingY}`}>
+    <div
+      className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
+    >
+      <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] md-2">
+        <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
+
+        <p className={`${styles.paragraph} ml-2`}>
+          {" "}
+          Special
+          <span className="text-white"> 20% </span> discount for a{" "}
+          <span className="text-white">one month</span> account
+        </p>
+      </div>
+
+      <div className=" flex flex-row justify-between items-center w-full ">
+        <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-100 leading-[75px]">
+          The New <br className="sm:block hidden" />
+          <span className="text-gradient">Generation</span>
+          <br className="sm:block hidden" /> Payment Method.
+        </h1>
+      </div>
+    </div>
+  </section>
+);
+
+export default Hero;
